@@ -1,0 +1,434 @@
+<html labg="en">
+<head>
+<title>riesz.io - Reference Documents</title>
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+
+<center>
+<p class="p1"><a href="/" class="a1">riesz.io</a></p>
+<hr>
+<p class="p1">PiDP-11 from Obsolescence Guaranteed</p>
+</center>
+
+<p>Here are some details of my PiDP-11 build.  If you are not familiar with
+the PiDP-11, you can read about it
+<a href="https://obsolescence.dev/pdp11.html" class="a2" target="_blank" rel="noopener noreferrer">at the manufacturer's website</a>.  Briefly,
+it is a hardware replica of the DEC PDP-11/70 with an emulated system running
+on an enclosed Raspberry Pi computer.<p>
+
+<p>
+<center>
+<table width="100%">
+  <tr>
+    <td width="25%"></td>
+    <td width="50%" align="center" valign="top">
+      <a href="images/complete-running.jpg" target="_blank" rel="noopener noreferrer">
+      <img src="images/complete-running.jpg" width="100%"></a><br>
+      My finished PiDP-11
+    </td>
+    <td width="25%"></td>
+  </tr>
+</table>
+</center>
+</p>
+
+<p>I did not take any photos of the board assembly, but there was nothing
+helpful that I could add that wasn't already covered by the several guides
+and videos that are available.</p>
+
+<p>What I <i>did</i> document to some degree is the post-build fitting-out
+of a power supply and RS-232 connections.  Additionally, getting all these
+into the PiDP-11 required expanding the case.  I've done nothing
+revolutionary, but this page may help answer some wiring or assembly
+questions without readily googleable answers.</p>
+
+<p>Treat everything described here with <i>skepticism</i>.  I am a very
+lazy amateur and have no credible expertise in electronics or electrical
+safety.</p>
+
+<p class="p2">THE CASE</p>
+
+<p>There seem to be a couple of 3D-printed options
+available.  I began with one presented in the
+<a href="https://groups.google.com/g/pidp-11/c/E-RMRVQ15NQ/m/DfQvmcDtAwAJ" class="a2" target="_blank" rel="noopener noreferrer">"Show us your kits" thread</a>
+from the PiDP-11 list on Google Groups.
+However, I chose a
+<a href="https://www.printables.com/model/140750-pidp-11-case-extension" class="a2" target="_blank" rel="noopener noreferrer">derivitave design from Louis Mamakos</a>
+that provides a single piece.
+The design file I used I used is
+<a href="pidp11_v9-complete.stl" class="a2" target="_blank" rel="noopener noreferrer">pidp11_v9-complete.stl</a>.
+I went to <a href="https://craftcloud3d.com/" class="a2" target="_blank" rel="noopener noreferrer">Craftcloud</a>
+to order <b>three</b> pieces from a printing comoany called ZLabs3D for
+USD 73.26 plus tax and shipping.  I glued the three pieces together to obtain
+this:</p>
+
+<p>
+<center>
+<table width="100%">
+  <tr>
+    <td width="25%"></td>
+    <td width="50%" align="center" valign="top">
+      <a href="images/case-extensions-glued-1.jpg" target="_blank" rel="noopener noreferrer">
+      <img src="images/case-extensions-glued-1.jpg" width="100%"></a>
+    </td>
+    <td width="25%"></td>
+  </tr>
+</table>
+</center>
+</p>
+<p>With the front panel:
+<center>
+<table width="100%">
+  <tr>
+    <td width="50%" align="center" valign="top">
+      <a href="images/case-extensions-glued-2.jpg" target="_blank" rel="noopener noreferrer">
+      <img src="images/case-extensions-glued-2.jpg" width="100%"></a>
+    </td>
+    <td width="50%" align="center" valign="top">
+      <a href="images/case-full-with-board.jpg" target="_blank" rel="noopener noreferrer">
+      <img src="images/case-full-with-board.jpg" width="100%"></a>
+    </td>
+  </tr>
+</table>
+</center>
+</p>
+<p>Plenty of room to work with in there.  If I were to do it again, I would
+take the time to figure out how to modify the STL design file to print a
+single, 6-inch-deep piece instead of three 2-inch-deep pieces.</p>
+<p>The previous two photos show the case extensions merely <i>resting</i> on
+the front panel and not attached to it.  I'll get to the attachment later with
+the final assembly.</p>
+
+<p class="p2">THE POWER SUPPLY</p>
+
+<p>I selected a
+<a href="https://www.amazon.com/dp/B019GUOV40" class="a2" target="_blank" rel="noopener noreferrer">Mean Well LRS-35-5</a>
+along with a
+<a href="https://www.amazon.com/dp/B0C2GHJGW2" class="a2" target="_blank" rel="noopener noreferrer">switched and fused AC power inlet assembly</a>
+and mounted them both on the back panel board supplied with the PiDP-11 kit.
+With the help of a drywall saw I made an opening for the power inlet and,
+with some "this looks pretty good" placement, mounted the power supply on
+the inside of the panel.</p>
+<p>The wires supplied with the power inlet are used to feed the power supply.
+A 5.5x2.1mm male barrel connector pigtail carries 5V from the power supply
+to a matching female pigtail soldered to the 5V input on the PiDP-11 board
+(P5).  All of these cables are secured to the power supply cage with small
+zip ties.</p>
+<p>
+<center>
+<table width="100%">
+  <tr>
+    <td width="50%" align="center" valign="top">
+      <a href="images/back-with-ports.jpg" target="_blank" rel="noopener noreferrer">
+      <img src="images/back-with-ports.jpg" width="100%"></a>
+    </td>
+    <td width="50%" align="center" valign="top">
+      <a href="images/back-inside-with-hookups-1.jpg" target="_blank" rel="noopener noreferrer">
+      <img src="images/back-inside-with-hookups-1.jpg" width="100%"></a><br>
+      Ignore these DB-25 connections&mdash;they were wrong
+    </td>
+  </tr>
+</table><br>
+<table width="100%">
+  <tr>
+    <td width="25%"></td>
+    <td width="50%" align="center" valign="top">
+      <a href="images/psu-closeup.jpg" target="_blank" rel="noopener noreferrer">
+      <img src="images/psu-closeup.jpg" width="100%"></a>
+    </td>
+    <td width="25%"></td>
+  </tr>
+</table>
+</center>
+</p>
+
+<p class="p2">KEY SWITCH HOOKUP</p>
+
+<p>This was the easiest part.  I simply snipped a short female-female
+breadboard jumper in two and soldered the ends to the keyswitch.  The
+other ends are plugged into two pins soldered into the header labeled
+"KEYSWITCH POWER".</p>
+<p>
+<center>
+<table width="100%">
+  <tr>
+    <td width="25%"></td>
+    <td width="50%" align="center" valign="top">
+      <a href="images/keyswitch-hookup.jpg" target="_blank" rel="noopener noreferrer">
+      <img src="images/keyswitch-hookup.jpg" width="100%" /></a><br>
+      Keyswitch connection.  Also note the female power
+      pigtail soldered directly to the "5V" and "GND" connections.
+    </td>
+    <td width="25%"></td>
+  </tr>
+</table>
+</center>
+</p>
+
+<p class="p2">PI CONSOLE</p>
+
+<p>This was the second-easiest.  I used a
+<a href="https://www.digikey.com/en/products/detail/dfrobot/DFR0077/7597122" class="a2" target="_blank" rel="noopener noreferrer">
+MAX202 RS232 to TTL Converter</a> purchased from DigiKey.
+It is a TTL-to-RS-232 converter circuit connected directly to a female DE-9
+connector.  The connector is mounted in one of the DE-9 holes provide on the
+back panel.  I would have preferred a <i>male</i> connector, but I have made
+do with a gender changer.</p>
+<p>
+<center>
+<table width="100%">
+  <tr>
+    <td width="25%"></td>
+    <td width="50%" align="center" valign="top">
+      <a href="images/MFG_DFR0077.jpg" target="_blank" rel="noopener noreferrer">
+      <img src="images/MFG_DFR0077.jpg" width="100%" /></a><br>
+      MAX202 RS232 to TTL Converter For Arduino from DFRobot<br>Image from DigiKey
+    </td>
+    <td width="25%"></td>
+  </tr>
+</table>
+</center>
+</p>
+<p>The converter TX and RX pins are wired directly to pins soldered to
+the TX and RX holes of the P5 header.  The cable I used is a
+<a href="https://www.amazon.com/dp/B08NVKVSSP" class="a2" target="_blank" rel="noopener noreferrer">
+60cm Breadboard Jumber Cable</a> with four jumper wires.  The 5V and GND
+pins on the converter are connected via additional jumpers to 5V and GND
+pins soldered into the "PROTOTYPE AREA" of the PiDP-11 board.</p>
+<p>The TX pin on the converter is connected to the TX pin on the board.
+The RX pin on the converter is connected to the RX pin on the board.</p>
+<p>
+<center>
+<table width="100%">
+  <tr>
+    <td width="50%" align="center" valign="top">
+      <a href="images/pi-console-ttl-rs232-hookup.jpg" target="_blank" rel="noopener noreferrer">
+      <img src="images/pi-console-ttl-rs232-hookup.jpg" width="100%"></a>
+    </td>
+    <td width="50%" align="center" valign="top">
+      <a href="images/power-and-console-ttl-hookup.jpg" target="_blank" rel="noopener noreferrer">
+      <img src="images/power-and-console-ttl-hookup.jpg" width="100%"></a><br>
+    </td>
+  </tr>
+</table><br>
+</center>
+</p>
+
+<p class="p2">USB TTL ADAPTERS</p>
+
+<p>I wanted to take full advantage of the features of the PiDP-11 board,
+including using the spaces for MAX2xx chips to convert TTL serial signals to
+RS-232.  The first part of this was installing the conversion ICs. Instead of
+soldering them directly to the board, I soldered a pair of 16-pin DIP sockets
+and plugged into them
+<a href="https://www.digikey.com/en/products/detail/analog-devices-inc-maxim-integrated/MAX232ACPE/947829" class="a2" target="_blank" rel="noopener noreferrer">MAX232ACPE+</a>
+ICs purchased, again, from DigiKey.  The reasoning I used for selecting this
+particular IC is unremembered.  Later, I installed the necessary
+ten 0.1&#x03BC;F capacitors.  I used ceramic capacitors in this case because
+they are readily available and non-polarized.  The legs were spaced awkwardly
+and I had to bend them a little to get them to fit into the prepared holes on
+the PiDP-11 board.</p>
+<p>
+<center>
+<table width="100%">
+  <tr>
+    <td width="25%"></td>
+    <td width="50%" align="center" valign="top">
+      <a href="images/board-capacitors-installed.jpg" target="_blank" rel="noopener noreferrer">
+      <img src="images/board-capacitors-installed.jpg" width="100%" /></a><br>
+    </td>
+    <td width="25%"></td>
+  </tr>
+</table>
+</center>
+</p>
+<p>The four
+<a href="https://www.amazon.com/dp/B00LZV1G6K" class="a2" target="_blank" rel="noopener noreferrer">HiLetgo USB Serial TTL Modules</a>
+were chosen more-or-less at random from the hundreds of options available from Amazon.
+The jumper on each module must connect the VCC and 5V pins to provide the
+5V signal that the conversion ICs are expecting.  Wiring the modules to the
+5V TTL PORTS headers on the PiDP-11 board is simple:  TX to TX, RX to RX
+and GND to GND.  Once again, I soldered hookup pins into the 5V TTL input
+and RS-232 output headers.</p>
+<p>
+<center>
+<table width="100%">
+  <tr>
+    <td width="50%" align="center" valign="top">
+      <a href="images/usb-ttl-to-pin-hookups.jpg" target="_blank" rel="noopener noreferrer">
+      <img src="images/usb-ttl-to-pin-hookups.jpg" width="100%"></a>
+    </td>
+    <td width="50%" align="center" valign="top">
+      <a href="images/power-header-connectors-closeup.jpg" target="_blank" rel="noopener noreferrer">
+      <img src="images/power-header-connectors-closeup.jpg" width="100%"></a><br>
+    </td>
+  </tr>
+</table>
+</center>
+</p>
+<p>Now for wiring the RS-232 output to the ports on the rear panel.
+I selected
+<a href="https://www.amazon.com/dp/B00C2KGUFA" class="a2" target="_blank" rel="noopener noreferrer">male DB-25 connectors</a>
+that had on the back <i>pins</i> rather thatn <i>solder cups</i>.  This
+made it trivial to hook them up by trial-and-error.  As with the DE-9
+above, I used four more 60cm cables to make these connections.</p>
+<p>
+<table width="100%">
+  <tr>
+    <td width="25%"></td>
+    <td width="50%" align="center" valign="top">
+      <a href="images/db25-pin-test.jpg" target="_blank" rel="noopener noreferrer">
+      <img src="images/db25-pin-test.jpg" width="100%" /></a><br>
+      <i>Not</i> the correct pins!!
+    </td>
+    <td width="25%"></td>
+  </tr>
+</table>
+</p>
+<p><i>However</i> I wanted to use DB-25-to-8P8C (RJ45)
+<a href="https://www.amazon.com/dp/B0CVZZKG6L" class="a2" target="_blank" rel="noopener noreferrer">adapters</a>
+so that I could hook the ports to a small terminal server I had lying
+around.  Why a terminal server?  Several reasons:  I don't have the space,
+budget, or time for several antique dumb terminals and I already had the
+terminal server for some reason;  It makes managing and accessing the
+PiDP-11's ports almost trivially simple from anywhere;  And nostalgia...
+back in the day my university used a network of terminal servers to
+manage access to all of its VAXen.</p>
+<p>My terminal server is a Tripp Lite B094 which uses Cisco pinouts
+and I had to wire the DB-25 connectors accordingly.  From the PiDP-11
+RS-232 output headers:  <b>TX to pin 4, RX to pin 8, and ground to either
+pin 7 or pin 5.</b></p>
+<p>
+<center>
+<table width="100%">
+  <tr>
+    <td width="25%"></td>
+    <td width="50%" align="center" valign="top">
+      <a href="images/usb-ttl-to-rs232-hookups.jpg" target="_blank" rel="noopener noreferrer">
+      <img src="images/usb-ttl-to-rs232-hookups.jpg" width="100%" /></a><br>
+    </td>
+    <td width="25%"></td>
+  </tr>
+</table>
+</center>
+</p>
+<p>
+<center>
+<table width="100%">
+  <tr>
+    <td width="50%" align="center" valign="top">
+      <a href="images/db25-rs232-pin-connections.jpg" target="_blank" rel="noopener noreferrer">
+      <img src="images/db25-rs232-pin-connections.jpg" width="100%" /></a><br>
+      <i>Still not</i> the correct pins.  I'll take a picture of the
+      correct hookup eventually.
+    </td>
+    <td width="50%" align="center" valign="top">
+      <a href="images/case-open-powered-on.jpg" target="_blank" rel="noopener noreferrer">
+      <img src="images/case-open-powered-on.jpg" width="100%"></a><br>
+    </td>
+  </tr>
+</table>
+</center>
+</p>
+<p>I bundled all five of the 60cm jumber cables together with zip ties
+and then used a zip tie to secure them to the PSU cage.</p>
+<p>Earlier I noted that I had <i>later</i> installed the capacitors for
+the MAX232 ICs.  In a fit of laziness I neglected to finish reading the
+part of the instructions that mentioned them.  It turns out that if
+you <i>don't</i> install them, the MAX232 ICs will transmit RS-232 data
+but will not read it.  Or it will read TTL data but not transmit it.
+One of those.  Either way&mdash;surprise, surprise&mdash;they will not
+work without the capacitors.</p>
+
+<p class="p2">FINAL ASSEMBLY</p>
+
+<p>After all the cables were hooked up I was able to finally tuck them into the
+case and close it up.  Holding it all together are four 1/4x6-inch lag screws.</p>
+<p>
+<table width="100%">
+  <tr>
+    <td width="25%"></td>
+    <td width="50%" align="center" valign="top">
+      <a href="images/lag-screws.jpg" target="_blank" rel="noopener noreferrer">
+      <img src="images/lag-screws.jpg" width="100%" /></a><br>
+    </td>
+    <td width="25%"></td>
+  </tr>
+</table>
+</p>
+<p>I used a 1/4-inch (I think) drill bit to open up the existing screw holes in the
+front panel to accommodate these larger screws.</p>
+<p>
+<center>
+<table width="100%">
+  <tr>
+    <td width="50%" align="center" valign="top">
+      <a href="images/case-with-lag-screws.jpg" target="_blank" rel="noopener noreferrer">
+      <img src="images/case-with-lag-screws.jpg" width="100%" /></a><br>
+      Here are the lag screws with washers
+    </td>
+    <td width="50%" align="center" valign="top">
+      <a href="images/case-assembled-back-with-cables.jpg" target="_blank" rel="noopener noreferrer">
+      <img src="images/case-assembled-back-with-cables.jpg" width="100%"></a><br>
+      With the DB-25 serial adapters attached
+    </td>
+  </tr>
+</table>
+</center>
+</p>
+<p>
+<center>
+<table width="100%">
+  <tr>
+    <td width="50%" align="center" valign="top">
+      <a href="images/running-with-terminal-server.jpg" target="_blank" rel="noopener noreferrer">
+      <img src="images/running-with-terminal-server.jpg" width="100%" /></a><br>
+      All hooked up
+    </td>
+    <td width="50%" align="center" valign="top">
+      <a href="images/complete-running-with-terminal-server.jpg" target="_blank" rel="noopener noreferrer">
+      <img src="images/complete-running-with-terminal-server.jpg" width="100%"></a><br>
+      Finally!
+    </td>
+  </tr>
+</table>
+</center>
+</p>
+
+<p class="p2">MISCELLANEOUS NOTES</p>
+
+<p>The DB-25 and DE-9 ports are held in place with
+<a href="https://www.amazon.com/dp/B07KWV9YQ9" class="a2" target="_blank" rel="noopener noreferrer">#4 standoff screws</a>
+and
+<a href="https://www.amazon.com/dp/B08NTYVZLR" class="a2" target="_blank" rel="noopener noreferrer">#4-40 nuts</a>.
+They allow plug thumbscrews to be used with the ports.</p>
+
+<p>At some point I'll go figure out how to properly enumerate the USB serial
+devices so that their TTYs are consistently connected to the same ports.</p>
+
+<p>Depending on what sort of serial device you're connecting to a port,
+you may need a null modem.  You can find little ones the size fof those 
+tiny gender changers.  Helpfully, the pin connections on the DB-25 ports
+allow you to easily swap the TX and RX lines if necessary.</p>
+
+<p>I have tested the USB-ttl-RS232-DB5-8P8C-terminal-server connections and
+have verified that they work as expected at a variety of line speeds.  But
+when SIMH uses them as a TTY it is <i>SLOW</i>&mdash;like 300 baud slow.
+I have either misconfigured SIMH or there is a bug in SIMH.  The terminal
+server is still speaking to the port at a higher speed; SIMH is just talking
+back very slowly.</p>
+
+<p>I get perpetual undervoltage warnings despite adjusting the PSU to the limits
+of my comfort zone.  I've tried using a 12V PSU with a 5V DC-DC converter with the
+same results.  I have no idea how to resolve this.</p>
+
+<p class="p2">THANK YOU</p>
+
+<p>Thanks to the team at Obsolescence Guaranteed for putting together such
+a cool and engaging kit.  And thank you to the community whose discussions
+have provided such helpful guidance!</p>
+
+</body>
+</html>

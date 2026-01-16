@@ -1,0 +1,43 @@
+a.a1
+{
+  color: #DDD;
+  text-decoration: none;
+}
+a.a1:hover
+{
+  text-decoration: underline;
+}
+a.a2
+{
+  color: #DDD;
+  text-decoration: underline;
+}
+body
+{
+  background: #2D2E30;
+  color: #DDD;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+p
+{
+  xline-height: 0;
+}
+p.p1
+{
+  font-size: 200%;
+}
+p.p2
+{
+  font-size: 150%;
+}
+p.pH
+{
+  font-size: 100%;
+  text-decoration: underline;
+}
+p.pN
+{
+  font-size: 100%;
+}
+
